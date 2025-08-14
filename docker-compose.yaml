@@ -3,7 +3,8 @@ services:
       image: indhu286/swaggerapp:latest
       container_name: swagger_app
       build:
-         context: ./nodejs-auto-swagger-doc-generator
+         context: .
+      dockerfile: Dockerfile 
       ports:
          - "8081:3000"
       env_file:
