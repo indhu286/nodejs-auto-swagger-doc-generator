@@ -1,18 +1,18 @@
 services:
    swagger:
-      image: node:18
+      image: indhu286/swaggerapp:latest
       container_name: swagger_app
       build:
          context: ./nodejs-auto-swagger-doc-generator
       ports:
-         -"8080:3000"
+         - "8080:3000"
       env_file:
-         -.env
+         - .env
       depends_on:
-         -mongo
+         - mongo
 
    mongo:
-      image: mongo
+      image: mongo:6.0
       container_name: swagger_db
       restart: always
       environment:
