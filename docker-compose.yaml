@@ -4,7 +4,7 @@ services:
       container_name: swagger_app
       build:
          context: .
-      dockerfile: Dockerfile 
+         dockerfile: Dockerfile 
       ports:
          - "8081:3000"
       env_file:
