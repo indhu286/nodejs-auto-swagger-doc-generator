@@ -16,5 +16,5 @@ services:
       container_name: swagger_db
       restart: always
       environment:
-         MONGO_INITDB_USERNAME: indhu
-         MONGO_INITDB_PASSWORD: hello123
+         MONGO_INITDB_ROOT_USERNAME: indhu
+         MONGO_INITDB_ROOT_PASSWORD: hello123
