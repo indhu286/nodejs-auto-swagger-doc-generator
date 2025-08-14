@@ -95,3 +95,4 @@ const swaggerGen = () => {
 };
 
 module.exports = swaggerGen;
+swaggerGen();
