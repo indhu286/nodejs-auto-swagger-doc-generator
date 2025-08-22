@@ -1,7 +1,7 @@
 services:
    swagger:
       image: indhu286/swaggerapp:latest
-      container_name: swagger_app
+    
       
       ports:
          - "8081:3000"
@@ -13,7 +13,7 @@ services:
 
    mongo:
       image: mongo:6.0
-      container_name: swagger_db
+      
       restart: always
       volumes: 
          - mongo_data:/data/db
