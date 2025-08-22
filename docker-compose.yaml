@@ -4,7 +4,7 @@ services:
       ports:
          - "8081:3000"
       environment:
-         - MONGO_URI=mongodb://mongo:27017/swaggerdb
+         - MONGO_URI=mongodb://${MONGO_USER}:${MONGO_PASS}@mongo:27017/swaggerdb?authSource=admin
          - JWT_SECRET=${JWT_SECRET}         
       depends_on:
          - mongo
@@ -12,6 +12,9 @@ services:
    mongo:
       image: mongo:6.0
       restart: always
+      environment:
+         - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
+         - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS}
       volumes: 
          - mongo_data:/data/db
 volumes:
