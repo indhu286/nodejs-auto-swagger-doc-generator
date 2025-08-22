@@ -7,8 +7,9 @@ services:
          dockerfile: Dockerfile 
       ports:
          - "8081:3000"
-      env_file:
-         - .env
+      environment:
+         - MONGO_URI:${MONGO_URI}
+         - JWT_SECRET:${JWT_SECRET}         
       depends_on:
          - mongo
 
@@ -16,6 +17,8 @@ services:
       image: mongo:6.0
       container_name: swagger_db
       restart: always
-      environment:
-         MONGO_INITDB_ROOT_USERNAME: indhu
-         MONGO_INITDB_ROOT_PASSWORD: hello123
+      volumes: 
+         - mongo_data: /data/db
+   volumes:
+      mongo_data:
+         
