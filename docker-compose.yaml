@@ -2,9 +2,7 @@ services:
    swagger:
       image: indhu286/swaggerapp:latest
       container_name: swagger_app
-      build:
-         context: .
-         dockerfile: Dockerfile 
+      
       ports:
          - "8081:3000"
       environment:
